@@ -7,16 +7,26 @@ FILE JS
 
 // Programma:
 // - stampare in console i numeri da 1 a 100;
-const valueFizz = 'Fizz';
-const valueBuzz = 'Buzz';
+let valueString = '';
+// 1 BONUS 
+const gameUlList = document.querySelector('ul.numbers-generated');
 
-for(let gameNumber = 1; gameNumber < 101; gameNumber++){
+for(let gameNumber = 1; gameNumber < 101; gameNumber++) {
+    const li = document.createElement ('li');
+    li.append (gameNumber + valueString);
+    gameUlList.append(li);
+
     if (gameNumber % 3 === 0) {
-        console.log(`${gameNumber} ${valueFizz}`);
+        valueString = 'Fizz';
+        console.log(gameNumber + valueString);
+    } else if (gameNumber % 5 === 0) {
+        valueString = 'Buzz';
+        console.log(gameNumber + valueString);
     } else {
-        console.log(gameNumber)
+        valueString = '';
+        console.log(gameNumber + valueString);
     }
-}
+};
 
 // - (condizione) SE MULTIMO DI 3:
 // -- vero: stampo “Fizz” al posto del numero;
@@ -32,3 +42,4 @@ for(let gameNumber = 1; gameNumber < 101; gameNumber++){
 // -- vero: stampo “FizzBuzz”;
 
 // -- falso: lascio numero;
+

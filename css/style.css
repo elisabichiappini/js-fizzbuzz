@@ -1,7 +1,34 @@
 /**********************************************
 FILE CSS
 **********************************************/
+/*RESET*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: rgb(207, 242, 154);
 }
+h1 {
+    text-align: center;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+ul.numbers-generated {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+li {
+    width: 10%;
+    height: 10vw;
+    background-color: blue;
+}
+
