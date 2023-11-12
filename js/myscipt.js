@@ -15,27 +15,29 @@ FILE JS
 // -- falso: lascio numero;
 
 // Programma:
-// - stampare in console i numeri da 1 a 100;
-let valueString = '';
+
 // 1 BONUS 
 const gameUlList = document.querySelector('ul.numbers-generated');
 
+// - stampare in console i numeri da 1 a 100;
 for(let gameNumber = 1; gameNumber <= 100; gameNumber++) {
-    const li = document.createElement ('li');
+    const elementLi = document.createElement ('li');
+    let valueString = gameNumber;
     
     if (gameNumber % 3 === 0 && gameNumber % 5 === 0) {
-        valueString = 'FizzBuzz';
-        console.log(valueString)
+        valueString = 'fizzbuzz';
+        // console.log(valueString)
     } else if (gameNumber % 3 === 0) {
-        valueString = 'Fizz';
-        console.log(valueString);
+        valueString = 'fizz';
+        // console.log(valueString);
     } else if (gameNumber % 5 === 0) {
-        valueString = 'Buzz';
-        console.log(valueString);
-    } else {
-        valueString = gameNumber + '';
-        console.log(valueString);
+        valueString = 'buzz';
+        // console.log(valueString);
     }
-    li.append (valueString);
-    gameUlList.append(li);
+
+    if (typeof valueString !== 'number'){
+        elementLi.classList.add(valueString);
+    }
+    elementLi.append (valueString);
+    gameUlList.appendChild(elementLi);
 };
